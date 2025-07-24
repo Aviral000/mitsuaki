@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', 'Segoe UI', 'Arial', sans-serif;
+  background: linear-gradient(120deg, #f9d423 0%, #ff4e50 100%);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Quicksand', 'Segoe UI', 'Arial', sans-serif;
+  letter-spacing: 1px;
+}
+
+ul {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #ffe082;
+}
+::-webkit-scrollbar-thumb {
+  background: #ff4e50;
+  border-radius: 8px;
+}
+
+/* Fun confetti dots for extra party feel */
+body::after {
+  content: '';
+  position: fixed;
+  left: 0; top: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle, #fff 2px, transparent 2.5px),
+    radial-gradient(circle, #f9d423 2px, transparent 2.5px),
+    radial-gradient(circle, #ff4e50 2px, transparent 2.5px);
+  background-size: 60px 60px;
+  opacity: 0.08;
+  z-index: 0;
+}
