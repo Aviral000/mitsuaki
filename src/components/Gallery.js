@@ -12,6 +12,14 @@ const GalleryGrid = styled.div`
   gap: 2.5rem;
   margin-top: 2rem;
   align-items: center;
+
+  @media (max-width: 600px) {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
 `;
 
 const GalleryImg = styled.img`
@@ -26,6 +34,12 @@ const GalleryImg = styled.img`
   &:hover {
     transform: scale(1.03) rotate(-1deg);
     box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+  }
+
+  @media (max-width: 600px) {
+    min-width: 220px;
+    max-width: 70vw;
+    height: 220px;
   }
 `;
 

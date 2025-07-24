@@ -11,6 +11,15 @@ const MessageBoardPlaceholder = styled.div`
   color: #888;
   gap: 1rem;
   text-align: center;
+
+  @media (max-width: 600px) {
+    flex-direction: row;
+    overflow-x: auto;
+    align-items: flex-start;
+    gap: 1.2rem;
+    padding-bottom: 1rem;
+    -webkit-overflow-scrolling: touch;
+  }
 `;
 
 const birthdayMessages = [
@@ -26,12 +35,31 @@ const birthdayMessages = [
   "Keep aiming high, and never stop being the awesome kid you are!"
 ];
 
+// Responsive message style for horizontal scroll
+const Message = styled.p`
+  margin: 0;
+  padding: 1rem 1.2rem;
+  background: #f5f5fa;
+  border-radius: 1rem;
+  min-width: 220px;
+  max-width: 340px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.07);
+  font-size: 1.08rem;
+  line-height: 1.5;
+  @media (max-width: 600px) {
+    min-width: 70vw;
+    max-width: 80vw;
+    font-size: 1rem;
+    padding: 0.8rem 0.7rem;
+  }
+`;
+
 const MessageBoard = () => (
   <Slide direction="up">
     <h2><ChatBubble color="#4e54c8" width={28} style={{ marginRight: 8 }} />Message Board</h2>
     <MessageBoardPlaceholder>
       {birthdayMessages.map((msg, idx) => (
-        <p key={idx}>{msg}</p>
+        <Message key={idx}>{msg}</Message>
       ))}
     </MessageBoardPlaceholder>
   </Slide>
